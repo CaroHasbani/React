@@ -1,9 +1,10 @@
 import './App.css';
-import ItemCount from './components/itemCount/ItemCount';
+import ItemDetailContainer from './components/containers/itemDetailContainer';
  import Navbar from './components/navBar/NavBar'
 function App() {
   return (
-    <><Navbar></Navbar><ItemCount></ItemCount></>
+    <><><Navbar></Navbar></><ItemDetailContainer></ItemDetailContainer></>
+    
   );
 }
 

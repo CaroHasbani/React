@@ -1,9 +1,11 @@
+/* eslint-disable jsx-a11y/alt-text */
 import "./style.css";
 import { useState } from 'react';
-const ItemCount = () =>{
+
+const ItemCount = ({products, stock}) =>{
     const [count, setCount]= useState(0);
     const  addProduct=()=>{setCount(count + 1)
-        if (count >= 10) {
+        if (count >= stock) {
             setCount(count + 0)
             alert("No hay mas unidades disponibles en este momento")
           }
@@ -16,6 +18,10 @@ const ItemCount = () =>{
 
     return(
         <div className="card">
+            <div className="id">{products.id}</div>
+    <div className="titulo">{products.title}</div>
+    <div><img className="imagen" src={products.image} /></div>
+    <div className="precio">$ {products.price}</div>
       <div className="buttons">
       <button className="button button4"  onClick={dropProduct}>-</button>
         <div className="counter"> {count}</div>
